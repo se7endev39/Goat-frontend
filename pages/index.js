@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Avatar from '@material-ui/core/Avatar';
 
 import {
   useWeb3React,
@@ -22,9 +23,10 @@ import DesktopWalletInfo from '../components/DesktopWalletInfo';
 import MobileWalletInfo from '../components/MobileWalletInfo';
 
 import Image from 'next/image'
-// import IconImg1 from '../public/images/ditto.png'
 import PhoneIcon from '@material-ui/icons/Phone';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
+// import {SvgIcon as ImportedSVG} from '../public/images/logo1.svg';
 
 const useStyles = makeStyles((theme) => ({
   // mintForm: {
@@ -69,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#E5D0DD',
     overflow: 'hidden',
     boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
-    borderRadius: '35px',
+    borderRadius: '35px'
 
   },
   mainBox: {
@@ -158,7 +160,7 @@ const StyledTab = withStyles((theme) => ({
     textShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
     textTransform: 'none'
   },
-}))((props) => <Tab icon={<PhoneIcon />} disableRipple {...props} />);
+}))((props) => <Tab icon={<Avatar alt="test avatar" src={props.imgSrc} />} disableRipple {...props} />);
 
 function a11yProps(index) {
   return {
@@ -241,8 +243,8 @@ export default function Index() {
         </Box>
         <Box className={classes.formBox}>
           <StyledTabs centered="true" value={value} onChange={handleChange} aria-label="Navigation tabs">
-            <StyledTab label="Mint BUTT"/>
-            <StyledTab label="Redeem GOAT" />
+            <StyledTab label="Mint BUTT" imgSrc="/images/logo.png" />
+            <StyledTab label="Redeem GOAT" imgSrc="/images/logo1.png" />
           </StyledTabs>
           {/* <Typography className={classes.padding} /> */}
           <TabPanel value={value} index={0}>

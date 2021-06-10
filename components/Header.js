@@ -31,6 +31,13 @@ const useStyles = makeStyles((theme) => ({
             display: 'flex',
         }
     },
+    muiButtonBase: {
+        fontSize: '14px',
+        fontWeight: 'bold',
+        borderRadius: '30px',
+        color: '#ffffff',
+        backgroundColor: '#D37ABC!important'
+    },
     mobileContainer: {
         display: 'flex',
         [theme.breakpoints.up('md')]: {
@@ -104,8 +111,7 @@ export default function Header({ setActivatingConnector, getErrorMessage }) {
                     </Typography>
 
                     {(active || error) ? (
-                        <Button
-                            color="primary"
+                        <Button className={classes.muiButtonBase}
                             disableElevation
                             onClick={() => {
                                 deactivate();
@@ -115,8 +121,7 @@ export default function Header({ setActivatingConnector, getErrorMessage }) {
                         </Button>
 
                     ) :
-                        <Button
-                            color="primary"
+                        <Button className={classes.muiButtonBase}
                             disableElevation
                             onClick={() => {
                                 setActivatingConnector(injected);
@@ -156,8 +161,7 @@ export default function Header({ setActivatingConnector, getErrorMessage }) {
                     </Typography>
 
                     {(active || error) ? (
-                        <Button
-                            color="primary"
+                        <Button className={classes.muiButtonBase}
                             disableElevation
                             onClick={() => {
                                 deactivate();
@@ -167,8 +171,7 @@ export default function Header({ setActivatingConnector, getErrorMessage }) {
                         </Button>
 
                     ) :
-                        <Button
-                            color="primary"
+                        <Button className={classes.muiButtonBase}
                             disableElevation
                             onClick={() => {
                                 setActivatingConnector(injected);

@@ -15,7 +15,6 @@ import InputBase from '@material-ui/core/InputBase';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-
 import {
     useWeb3React,
     UnsupportedChainIdError
@@ -26,6 +25,11 @@ import DITTO_ABI from '../lib/contract/DITTOAbi.json'
 
 import MintButton from './MintButton';
 
+const WhiteTextTypography = withStyles({
+    root: {
+      color: "#FFFFFF"
+    }
+  })(Typography);
 
 const useStyles = makeStyles((theme) => ({
     mintForm: {
@@ -33,15 +37,21 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '10%',
+        color: theme.palette.common.white,
         [theme.breakpoints.up('md')]: {
             marginTop: '2.5%'
         },
+    },
+    colorwhite:{
+        color: theme.palette.common.white
     },
     inputField: {
         // width: '95%',
         // [theme.breakpoints.up('md')]: {
         //     width: '95%'
         // },
+        color: theme.palette.common.white,
+        borderColor:theme.palette.common.white,
         width: '95%',
         border: 0,
         margin: 0,
@@ -55,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
     jss4342:{
         width: '100%',
         margin: '8px 0px',
+        color: theme.palette.common.white,
         padding: '8px 24px',
         boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
         borderRadius: '50px',
@@ -151,6 +162,7 @@ export default function MintForm() {
                     className={classes.inputField}
                     label="Amount of DITTO to mint with"
                     // variant="outlined"
+                    
                     color="primary"
                     type="number"
                     disabled={
@@ -168,7 +180,7 @@ export default function MintForm() {
                     InputProps={{
                         endAdornment:
                             <InputAdornment position="end">
-                                <Button
+                                <Button className={classes.colorwhite} 
                                     disabled={
                                         (account === undefined || account === null || parseFloat(dittoBalance) === 0)
                                     }
@@ -178,7 +190,7 @@ export default function MintForm() {
                                     }}>
                                     Max
                                 </Button>
-                                <Typography>DITTO</Typography>
+                                <WhiteTextTypography>DITTO</WhiteTextTypography>
                             </InputAdornment>,
                     }} />
             </Box>
@@ -190,7 +202,6 @@ export default function MintForm() {
                     className={classes.inputField}
                     label="Receive"
                     // variant="outlined"
-                    color="primary"
                     value={xDittoOutput}
                     InputProps={{
                         readOnly: true,
@@ -201,12 +212,12 @@ export default function MintForm() {
                                         <CircularProgress color="primary" size={20} />
                                     </Box>
                                     : null}
-                                <Typography>xDITTO</Typography>
+                                <WhiteTextTypography>xDITTO</WhiteTextTypography>
                             </InputAdornment>,
                     }} />
             </Box>
             
-            {/* <MintButton dittoContract={dittoContract} xDittoContract={xDittoContract} inputDitto={dittoInput} /> */}
+            <MintButton dittoContract={dittoContract} xDittoContract={xDittoContract} inputDitto={dittoInput} />
         </form>
     );
 };

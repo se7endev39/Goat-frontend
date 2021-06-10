@@ -7,9 +7,11 @@ import { debounce } from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
+import { withStyles } from "@material-ui/core/styles";
 
 import {
     useWeb3React,
@@ -21,6 +23,17 @@ import DITTO_ABI from '../lib/contract/DITTOAbi.json';
 
 import RedeemButton from '../components/RedeemButton';
 
+const WhiteTextField = withStyles({
+    root: {
+      color: "#FFFFFF"
+    }
+  })(TextField);
+const WhiteTextTypography = withStyles({
+    root: {
+      color: "#FFFFFF"
+    }
+  })(Typography);
+
 const useStyles = makeStyles((theme) => ({
     redeemForm: {
         display: 'flex',
@@ -31,12 +44,22 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '2.5%'
         },
     },
+    
     inputField: {
         width: '95%',
         [theme.breakpoints.up('md')]: {
-            width: '40%'
+            width: '100%'
         },
+    },
+    jss4342:{
+        width: '100%',
+        margin: '8px 0px',
+        padding: '8px 24px',
+        boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
+        borderRadius: '50px',
+        backgroundColor: '#D37ABC'
     }
+
 }));
 
 export default function RedeemForm() {
@@ -101,53 +124,57 @@ export default function RedeemForm() {
 
     return (
         <form className={classes.redeemForm} noValidate autoComplete="off">
-            <TextField
-                id="redeem-amount-input"
-                className={classes.inputField}
-                label="Amount of xDITTO to redeem from"
-                variant="outlined"
-                color="primary"
-                value={inputXDitto}
-                onChange={(e) => {
-                    setInputXDitto(e.target.value);
-                    calculateDittoRedeemOutput(e.target.value);
-                }}
-                type="number"
-                disabled={
-                    (account === undefined || account === null)
-                }
-                InputLabelProps={{ shrink: true }}
-                inputProps={{
-                    min: 0,
-                }}
-                InputProps={{
-                    endAdornment: <InputAdornment position="start">
-                        <Button
-                            disabled={
-                                (account === undefined || account === null || parseFloat(xDittoBalance) === 0)
-                            }
-                            onClick={() => {
-                                setInputXDitto(xDittoBalance);
-                                calculateDittoRedeemOutput(xDittoBalance);
-                            }}>
-                            Max
-                            </Button>
-                        <Typography>xDITTO</Typography>
-                    </InputAdornment>,
-                }} />
-            <ArrowDownwardIcon color="primary" style={{ fontSize: 70, marginTop: '5px', marginBottom: '5px' }} />
-            <TextField
-                id="ditto-amount-ouput"
-                className={classes.inputField}
-                label="Receive"
-                variant="outlined"
-                value={dittoOutput}
-                color="primary"
-                InputProps={{
-                    readOnly: true,
-                    endAdornment: <InputAdornment position="start"><Typography>DITTO</Typography></InputAdornment>,
-                }}
-            />
+            <Box className={classes.jss4342}>
+                <WhiteTextField
+                    id="redeem-amount-input"
+                    className={classes.inputField}
+                    label="Amount of xDITTO to redeem from"
+                    // variant="outlined"
+                    value={inputXDitto}
+                    onChange={(e) => {
+                        setInputXDitto(e.target.value);
+                        calculateDittoRedeemOutput(e.target.value);
+                    }}
+                    type="number"
+                    disabled={
+                        (account === undefined || account === null)
+                    }
+                    InputLabelProps={{ shrink: true }}
+                    inputProps={{
+                        min: 0,
+                    }}
+                    InputProps={{
+                        endAdornment: <InputAdornment position="start">
+                            <Button
+                                disabled={
+                                    (account === undefined || account === null || parseFloat(xDittoBalance) === 0)
+                                }
+                                onClick={() => {
+                                    setInputXDitto(xDittoBalance);
+                                    calculateDittoRedeemOutput(xDittoBalance);
+                                }}>
+                                Max
+                                </Button>
+                            <WhiteTextTypography>xDITTO</WhiteTextTypography>
+                        </InputAdornment>,
+                    }} />
+            </Box>
+            
+            {/* <ArrowDownwardIcon color="primary" style={{ fontSize: 70, marginTop: '5px', marginBottom: '5px' }} /> */}
+            <Box className={classes.jss4342}>
+                <WhiteTextField
+                    id="ditto-amount-ouput"
+                    className={classes.inputField}
+                    label="Receive"
+                    // variant="outlined"
+                    value={dittoOutput}
+                    InputProps={{
+                        readOnly: true,
+                        endAdornment: <InputAdornment position="start"><WhiteTextTypography>DITTO</WhiteTextTypography></InputAdornment>,
+                    }}
+                />
+            </Box>
+            
             <RedeemButton xDittoContract={xDittoContract} dittoContract={dittoContract} inputXDitto={inputXDitto} />
         </form>
     );

@@ -19,6 +19,12 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     buttonContainer: {
+        fontSize: '14px',
+        fontWeight: 'bold',
+        borderRadius: '30px',
+        color: '#ffffff',
+        backgroundColor: '#19c8d5',
+
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -98,7 +104,7 @@ export default function FormButton({ xDittoContract, dittoContract, inputDitto }
     if (account === undefined || account === null) {
         return (
             <Box className={classes.buttonContainer} >
-                <Button type="button">Connect wallet to BSC mainnet to continue</Button>
+                <Button type="button">GOAT TO BUTT</Button>
             </Box>
         );
     }
