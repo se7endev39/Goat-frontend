@@ -21,31 +21,85 @@ import RedeemForm from '../components/RedeemForm'
 import DesktopWalletInfo from '../components/DesktopWalletInfo';
 import MobileWalletInfo from '../components/MobileWalletInfo';
 
+import Image from 'next/image'
+// import IconImg1 from '../public/images/ditto.png'
+import PhoneIcon from '@material-ui/icons/Phone';
+
 
 const useStyles = makeStyles((theme) => ({
-  mintForm: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: '5%',
-  },
-  inputField: {
-    width: '40%',
-  },
-  tabs: {
-    borderRight: `1px solid ${theme.palette.primary}`,
-  },
-  mobileTabs: {
-    display: 'block',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
+  // mintForm: {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   alignItems: 'center',
+  //   marginTop: '5%',
+  // },
+  // inputField: {
+  //   width: '40%',
+  // },
+  // tabs: {
+  //   borderRight: `1px solid ${theme.palette.primary}`,
+  // },
+  // mobileTabs: {
+  //   display: 'block',
+  //   [theme.breakpoints.up('md')]: {
+  //     display: 'none',
+  //   },
+  // },
   desktopTabs: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'block',
-    },
+    // display: 'none',
+    // [theme.breakpoints.up('md')]: {
+    //   display: 'block',
+    // },
+    width: '100%',
+    position: 'relative',
+    maxWidth: '450px'
+  },
+  dtoWallet: {
+    width: '100%',
+    display: 'flex',
+    position: 'relative',
+    maxWidth: '290px',
+    flexDirection: 'column'
+  },
+  dtoWallet4354: {
+    width: '100%',
+    zIndex: '1',
+    position: 'relative',
+    marginTop: '105px',
+    backgroundColor: '#E5D0DD',
+    overflow: 'hidden',
+    boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
+    borderRadius: '35px',
+
+  },
+  mainBox: {
+    margin: '64px 0px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
+  },
+  imageBox: {
+    width: '100%',
+    display: 'flex',
+    position: 'absolute',
+    justifyContent: 'center'
+  },
+
+  imageBoxWallet: {
+    width: '100%',
+    display: 'flex',
+    position: 'absolute',
+    justifyContent: 'center'
+  },
+  formBox: {
+    width: '100%',
+    zIndex: 1,
+    position: 'relative',
+    marginTop: '105px',
+    backgroundColor: '#E5D0DD',
+    overflow: 'hidden',
+    boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
+    borderRadius: '35px'
   }
 }));
 
@@ -90,16 +144,21 @@ const StyledTabs = withStyles({
 
 const StyledTab = withStyles((theme) => ({
   root: {
-    textTransform: 'none',
-    color: theme.palette.text.primary,
-    fontWeight: theme.typography.fontWeightRegular,
-    fontSize: theme.typography.pxToRem(22),
-    marginRight: theme.spacing(5),
-    '&:focus': {
-      opacity: 1,
-    },
+    // textTransform: 'none',
+    // color: theme.palette.text.primary,
+    // fontWeight: theme.typography.fontWeightRegular,
+    // fontSize: theme.typography.pxToRem(22),
+    // marginRight: theme.spacing(5),
+    // '&:focus': {
+    //   opacity: 1,
+    // },
+    color: '#FFFFFF',
+    fontSize: '24px',
+    fontWeight: 'bold',
+    textShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
+    textTransform: 'none'
   },
-}))((props) => <Tab disableRipple {...props} />);
+}))((props) => <Tab icon={<PhoneIcon />} disableRipple {...props} />);
 
 function a11yProps(index) {
   return {
@@ -169,16 +228,47 @@ export default function Index() {
 
 
   return (
-    <Box>
-      <DesktopWalletInfo dittoBalance={dittoBalance} xDittoBalance={xDittoBalance} exchangeRate={exchangeRate} usdPrice={usdPrice} />
+    <Box className={classes.mainBox}>
+      
       <Box marginY={3} className={classes.desktopTabs}>
-        <StyledTabs centered="true" value={value} onChange={handleChange} aria-label="Navigation tabs">
-          <StyledTab label="Mint BUTT" />
-          <StyledTab label="Redeem GOAT" />
-        </StyledTabs>
-        <Typography className={classes.padding} />
+        <Box className={classes.imageBox}>
+          <Image
+              src="/images/xditto-form.png"
+              alt="Main Ditto logo mascot"
+              width={'240px'}
+              height={'auto'}
+          />
+        </Box>
+        <Box className={classes.formBox}>
+          <StyledTabs centered="true" value={value} onChange={handleChange} aria-label="Navigation tabs">
+            <StyledTab label="Mint BUTT"/>
+            <StyledTab label="Redeem GOAT" />
+          </StyledTabs>
+          {/* <Typography className={classes.padding} /> */}
+          <TabPanel value={value} index={0}>
+            <MintForm />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <RedeemForm />
+          </TabPanel>
+          </Box>
       </Box>
-      <Box marginY={1} className={classes.mobileTabs}>
+      <Box marginY={3} className={classes.dtoWallet}>
+      <Box className={classes.imageBox}>
+          <Image
+              src="/images/xditto-wallet.png"
+              alt="Main Ditto logo mascot"
+              width={'240px'}
+              height={'auto'}
+          />
+        </Box>
+        <Box className={classes.dtoWallet4354}>
+          <DesktopWalletInfo dittoBalance={dittoBalance} xDittoBalance={xDittoBalance} exchangeRate={exchangeRate} usdPrice={usdPrice} />
+        </Box>
+        
+      </Box>
+      
+      {/* <Box marginY={1} className={classes.mobileTabs}>
         <Tabs
           orientation="vertical"
           value={value}
@@ -193,14 +283,9 @@ export default function Index() {
           <Tab label="Redeem GOAT" disableRipple {...a11yProps(1)} />
         </Tabs>
       </Box>
-      <MobileWalletInfo dittoBalance={dittoBalance} xDittoBalance={xDittoBalance} exchangeRate={exchangeRate} usdPrice={usdPrice} />
+      <MobileWalletInfo dittoBalance={dittoBalance} xDittoBalance={xDittoBalance} exchangeRate={exchangeRate} usdPrice={usdPrice} /> */}
 
-      <TabPanel value={value} index={0}>
-        <MintForm />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <RedeemForm />
-      </TabPanel>
+      
     </Box>
   );
 }
