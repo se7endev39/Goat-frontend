@@ -68,13 +68,14 @@ const useStyles = makeStyles((theme) => ({
     zIndex: '1',
     position: 'relative',
     marginTop: '105px',
-    backgroundColor: '#E5D0DD',
+    backgroundColor: '#6ca8fe',
     overflow: 'hidden',
     boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
     borderRadius: '35px'
 
   },
   mainBox: {
+    
     margin: '64px 0px',
     display: 'flex',
     alignItems: 'center',
@@ -98,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     position: 'relative',
     marginTop: '105px',
-    backgroundColor: '#E5D0DD',
+    backgroundColor: '#6ca8fe',
     overflow: 'hidden',
     boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
     borderRadius: '35px'
@@ -139,7 +140,7 @@ const StyledTabs = withStyles({
     '& > span': {
       maxWidth: 90,
       width: '100%',
-      backgroundColor: '#ED7AC0',
+      backgroundColor: '#6ca8fe',
     },
   },
 })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);

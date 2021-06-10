@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '4px 16px',
         boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
         borderRadius: '50px',
-        backgroundColor: '#D37ABC'
+        backgroundColor: '#132333'
     }
 }));
 

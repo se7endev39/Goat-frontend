@@ -54,17 +54,17 @@ export default function Footer() {
                 <Box display="flex" justifyContent="space-between">
                     <Box display="flex" alignItems="center" paddingLeft={'5%'}>
                         <Image
-                            src="/images/ditto.png"
+                            src="/images/ditto-blue.png"
                             alt="Main Ditto logo mascot"
                             width={'100%'}
                             height={'100%'}
                         />
                     </Box>
                     <Box display="flex" alignItems="center" paddingLeft={5} width="45%" justifyContent="space-evenly">
-                        <a href="https://t.me/dittomoney" target="_blank"><FontAwesomeIcon icon={faTelegram} size="2x" style={{ color: '#ED7AC0' }} /></a>
-                        <a href="https://dittomoney.medium.com" target="_blank"><FontAwesomeIcon icon={faMedium} size="2x" style={{ color: '#ED7AC0' }} /></a>
-                        <a href="https://twitter.com/dittomoney_" target="_blank"><FontAwesomeIcon icon={faTwitter} size="2x" style={{ color: '#ED7AC0' }} /></a>
-                        <a href="https://github.com/Ditto-money/" target="_blank"><FontAwesomeIcon icon={faGithub} size="2x" style={{ color: '#ED7AC0' }} /></a>
+                        <a href="https://t.me/dittomoney" target="_blank"><FontAwesomeIcon icon={faTelegram} size="2x" style={{ color: '#6ca8fe' }} /></a>
+                        <a href="https://dittomoney.medium.com" target="_blank"><FontAwesomeIcon icon={faMedium} size="2x" style={{ color: '#6ca8fe' }} /></a>
+                        <a href="https://twitter.com/dittomoney_" target="_blank"><FontAwesomeIcon icon={faTwitter} size="2x" style={{ color: '#6ca8fe' }} /></a>
+                        <a href="https://github.com/Ditto-money/" target="_blank"><FontAwesomeIcon icon={faGithub} size="2x" style={{ color: '#6ca8fe' }} /></a>
                     </Box>
                     <Box display="flex" alignItems="center" paddingRight={'5%'}>
                         <Typography color="textPrimary">First elastic supply token on BSC <br /> Copywhat? 2021 Ditto.money</Typography>
@@ -75,17 +75,17 @@ export default function Footer() {
                 <Box display="flex" flexDirection="column" alignItems="center">
                     <Box display="flex" alignItems="center">
                         <Image
-                            src="/images/ditto.png"
+                            src="/images/ditto-blue.png"
                             alt="Main Ditto logo mascot"
                             width={'100%'}
                             height={'100%'}
                         />
                     </Box>
                     <Box display="flex" alignItems="center" width="100%" justifyContent="space-evenly" marginY="5%">
-                        <a href="https://t.me/dittomoney" target="_blank"><FontAwesomeIcon icon={faTelegram} size="2x" style={{ color: '#ED7AC0' }} /></a>
-                        <a href="https://dittomoney.medium.com" target="_blank"><FontAwesomeIcon icon={faMedium} size="2x" style={{ color: '#ED7AC0' }} /></a>
-                        <a href="https://twitter.com/dittomoney_" target="_blank"><FontAwesomeIcon icon={faTwitter} size="2x" style={{ color: '#ED7AC0' }} /></a>
-                        <a href="https://github.com/Ditto-money/" target="_blank"><FontAwesomeIcon icon={faGithub} size="2x" style={{ color: '#ED7AC0' }} /></a>
+                        <a href="https://t.me/dittomoney" target="_blank"><FontAwesomeIcon icon={faTelegram} size="2x" style={{ color: '#6ca8fe' }} /></a>
+                        <a href="https://dittomoney.medium.com" target="_blank"><FontAwesomeIcon icon={faMedium} size="2x" style={{ color: '#6ca8fe' }} /></a>
+                        <a href="https://twitter.com/dittomoney_" target="_blank"><FontAwesomeIcon icon={faTwitter} size="2x" style={{ color: '#6ca8fe' }} /></a>
+                        <a href="https://github.com/Ditto-money/" target="_blank"><FontAwesomeIcon icon={faGithub} size="2x" style={{ color: '#6ca8fe' }} /></a>
                     </Box>
                     <Box display="flex" alignItems="center" textAlign="center">
                         <Typography color="textPrimary">First elastic supply token on BSC <br /> Copywhat? 2021 Ditto.money</Typography>

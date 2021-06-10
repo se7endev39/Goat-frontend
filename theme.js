@@ -21,10 +21,10 @@ let lightTheme = createMuiTheme({
     palette: {
         type: 'light',
         primary: {
-            main: '#ED7AC0',
+            main: '#132333',
         },
         secondary: {
-            main: '#19857b',
+            main: '#6caafe',
         },
         error: {
             main: red.A400,
@@ -33,8 +33,9 @@ let lightTheme = createMuiTheme({
             default: '#FFF9FF',
         },
         text: {
-            primary: '#000000',
-            secondary: '#000000'
+            primary: '#FFFFFF',
+            secondary: '#FFFFFF',
+            disabled: '#FFFFFF'
         }
     },
 });
@@ -59,7 +60,7 @@ let darkTheme = createMuiTheme({
     palette: {
         type: 'dark',
         primary: {
-            main: '#ED7AC0',
+            main: '#6ca8fe',
         },
         secondary: {
             main: '#19857b',

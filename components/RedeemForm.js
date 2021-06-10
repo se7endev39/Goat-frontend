@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '8px 24px',
         boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
         borderRadius: '50px',
-        backgroundColor: '#D37ABC'
+        backgroundColor: '#132333'
     }
 
 }));
@@ -146,9 +146,9 @@ export default function RedeemForm() {
                     InputProps={{
                         endAdornment: <InputAdornment position="start">
                             <Button
-                                disabled={
-                                    (account === undefined || account === null || parseFloat(xDittoBalance) === 0)
-                                }
+                                // disabled={
+                                //     (account === undefined || account === null || parseFloat(xDittoBalance) === 0)
+                                // }
                                 onClick={() => {
                                     setInputXDitto(xDittoBalance);
                                     calculateDittoRedeemOutput(xDittoBalance);

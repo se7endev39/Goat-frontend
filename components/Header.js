@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
         borderRadius: '30px',
         color: '#ffffff',
-        backgroundColor: '#D37ABC!important'
+        backgroundColor: '#132333!important'
     },
     mobileContainer: {
         display: 'flex',
@@ -66,7 +66,7 @@ export default function Header({ setActivatingConnector, getErrorMessage }) {
         <div>
             <Box className={classes.desktopContainer} justifyContent="center" alignItems="center">
                 <Image
-                    src="/images/ditto.png"
+                    src="/images/ditto-blue.png"
                     alt="Main Ditto logo mascot"
                     width={'100%'}
                     height={'100%'}
@@ -77,7 +77,7 @@ export default function Header({ setActivatingConnector, getErrorMessage }) {
             </Box>
             <Box className={classes.mobileContainer} paddingTop={'2%'} justifyContent="center" alignItems="center">
                 <Image
-                    src="/images/ditto.png"
+                    src="/images/ditto-blue.png"
                     alt="Main Ditto logo mascot"
                     width={'75%'}
                     height={'75%'}

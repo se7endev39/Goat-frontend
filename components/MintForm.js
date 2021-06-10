@@ -27,7 +27,7 @@ import MintButton from './MintButton';
 
 const WhiteTextTypography = withStyles({
     root: {
-      color: "#FFFFFF"
+      color: '#FFFFFF'
     }
   })(Typography);
 
@@ -43,15 +43,15 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     colorwhite:{
-        color: theme.palette.common.white
+        color: '#FFFFFF'
     },
     inputField: {
         // width: '95%',
         // [theme.breakpoints.up('md')]: {
         //     width: '95%'
         // },
-        color: theme.palette.common.white,
-        borderColor:theme.palette.common.white,
+        color: '#FFFF!important',
+        borderColor:'theme.palette.common.white',
         width: '95%',
         border: 0,
         margin: 0,
@@ -69,12 +69,13 @@ const useStyles = makeStyles((theme) => ({
         padding: '8px 24px',
         boxShadow: '0px 4px 4px rgb(0 0 0 / 25%)',
         borderRadius: '50px',
-        backgroundColor: '#D37ABC'
+        backgroundColor: '#132333'
     }
 }));
 
 const StyledTextField = withStyles((theme) => ({
     root: {
+        color: "#FFFFFF!important",
         '& input:valid': {
             // borderColor: theme.palette.text.primary,
             borderWidth: 0,
@@ -162,8 +163,6 @@ export default function MintForm() {
                     className={classes.inputField}
                     label="Amount of DITTO to mint with"
                     // variant="outlined"
-                    
-                    color="primary"
                     type="number"
                     disabled={
                         (account === undefined || account === null)
@@ -181,9 +180,9 @@ export default function MintForm() {
                         endAdornment:
                             <InputAdornment position="end">
                                 <Button className={classes.colorwhite} 
-                                    disabled={
-                                        (account === undefined || account === null || parseFloat(dittoBalance) === 0)
-                                    }
+                                    // disabled={
+                                    //     (account === undefined || account === null || parseFloat(dittoBalance) === 0)
+                                    // }
                                     onClick={() => {
                                         setDittoInput(dittoBalance);
                                         calculateXDittoMintOutput(dittoBalance);
